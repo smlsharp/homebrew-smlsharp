@@ -10,7 +10,7 @@ The following packages are included.
 
 Tap this repository to your Homebrew installation.
 ```
-$ brew tap --full smlsharp/smlsharp \
+$ brew tap smlsharp/smlsharp \
   https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew
 ```
 Then, you can install SML# by one line:
