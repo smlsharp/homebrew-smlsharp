@@ -4,11 +4,12 @@ class Massivethreads < Formula
   url "https://github.com/massivethreads/massivethreads/archive/v1.00.tar.gz"
   sha256 "85b83ff096e2984c725faa4814a9c5e77c143198660ec60118b897afdfd05f98"
   version "1.00"
+  license "BSD-2-Clause"
 
   bottle do
-    root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
+        root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
     cellar :any
-    sha256 "d58d446dcfc03a64dd9d37df185634beb33dbd9771b859164affffc29a503780" => :catalina
+    sha256 "e66a81676e06fb170ddf6747302507c189207f09ebcf31129a648d3d4ba007e7" => :big_sur
   end
 
   option "with-dr", "Install DAG recorder"
@@ -29,7 +30,9 @@ class Massivethreads < Formula
 
   patch :DATA
 
-  include Language::Python::Virtualenv
+  if build.with? "dr" then
+    include Language::Python::Virtualenv
+  end
 
   def install
     if build.with? "dr" then
