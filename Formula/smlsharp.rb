@@ -1,21 +1,19 @@
 class Smlsharp < Formula
   desc "Standard ML compiler with practical extensions"
   homepage "http://www.pllab.riec.tohoku.ac.jp/smlsharp/"
-  url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/smlsharp-3.6.0.tar.gz"
-  sha256 "83790d5e6b468a08f7fb221f0c2682f4243aaff063c4c43533734e4232e7720b"
-  version "3.6.0"
+  url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/smlsharp-3.7.0.tar.gz"
+  sha256 "224a8df8dcc9ad717cef79be846159fa918a1030b8fde5476b250f96184d89e7"
+  version "3.7.0"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
-    sha256 "64af53ad3ceb244c8a94f0871b3f70780e8ce5b67c21b5ab0215a68acdef8360" => :catalina
+        root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
+    sha256 "7a8a66851af423ad2da1c405a799e9994f8c9ba3d3d543bbc177ed0b81869536" => :big_sur
   end
 
   depends_on "llvm@9"
   depends_on "massivethreads"
   depends_on "gmp"
-  depends_on "yajl"
   depends_on "xz" => :build
 
   def install
