@@ -1,14 +1,14 @@
 class Smlsharp < Formula
   desc "Standard ML compiler with practical extensions"
   homepage "http://www.pllab.riec.tohoku.ac.jp/smlsharp/"
-  url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/smlsharp-3.7.0.tar.gz"
-  sha256 "224a8df8dcc9ad717cef79be846159fa918a1030b8fde5476b250f96184d89e7"
-  version "3.7.0"
+  url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/smlsharp-3.7.1.tar.gz"
+  sha256 "6dbe0c6c11b6636f9cf5696961782fd43490ea63265d6e19bf387764931f4449"
+  version "3.7.1"
   license "BSD-3-Clause"
 
   bottle do
         root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
-    sha256 "7a8a66851af423ad2da1c405a799e9994f8c9ba3d3d543bbc177ed0b81869536" => :big_sur
+    sha256 cellar: :any, big_sur: "c3eb7625a31147fcb74151bcf0e971578aee657806d79eda0e545f90f81bebc8"
   end
 
   depends_on "llvm@9"
