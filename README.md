@@ -10,8 +10,7 @@ The following packages are included.
 
 Tap this repository to your Homebrew installation.
 ```
-$ brew tap smlsharp/smlsharp \
-  https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew
+$ brew tap smlsharp/smlsharp
 ```
 Then, you can install SML# by one line:
 ```
@@ -20,4 +19,4 @@ $ brew install smlsharp
 
 ## Contributing
 
-Write to smlsharp-dev@ml.riec.tohoku.ac.jp.
+Submit issues and pull requests on GitHub.
