@@ -7,9 +7,8 @@ class Massivethreads < Formula
   license "BSD-2-Clause"
 
   bottle do
-        root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
-    cellar :any
-    sha256 "e66a81676e06fb170ddf6747302507c189207f09ebcf31129a648d3d4ba007e7" => :big_sur
+    root_url "https://github.com/smlsharp/repos/raw/main/homebrew"
+    sha256 cellar: :any, big_sur: "e66a81676e06fb170ddf6747302507c189207f09ebcf31129a648d3d4ba007e7"
   end
 
   option "with-dr", "Install DAG recorder"

@@ -7,8 +7,8 @@ class Smlsharp < Formula
   license "BSD-3-Clause"
 
   bottle do
-        root_url "https://www.pllab.riec.tohoku.ac.jp/smlsharp/download/homebrew-bottles"
-    sha256 cellar: :any, big_sur: "c3eb7625a31147fcb74151bcf0e971578aee657806d79eda0e545f90f81bebc8"
+    root_url "https://github.com/smlsharp/repos/raw/main/homebrew"
+    sha256 big_sur: "c3eb7625a31147fcb74151bcf0e971578aee657806d79eda0e545f90f81bebc8"
   end
 
   depends_on "llvm@9"
