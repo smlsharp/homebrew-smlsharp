@@ -6,6 +6,7 @@ class Smlsharp < Formula
   version "4.0.0"
   license "MIT"
   revision 2
+  head "https://github.com/smlsharp/smlsharp.git"
 
   bottle do
     root_url "https://github.com/smlsharp/repos/raw/main/homebrew"
