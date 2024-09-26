@@ -12,13 +12,13 @@ class Smlsharp < Formula
     sha256 big_sur: "5a71f04d57ac27cece90983cb041a5bdd9ae6aca2612da0bd5137317d1490bd5"
   end
 
-  depends_on "llvm@12"
+  depends_on "llvm@18"
   depends_on "massivethreads"
   depends_on "gmp"
   depends_on "xz" => :build
 
   def install
-    opt_llvm = Formula["llvm@12"].opt_prefix.sub(/llvm\z/, "llvm@12")
+    opt_llvm = Formula["llvm@18"].opt_prefix.sub(/llvm\z/, "llvm@18")
     opt_llvm_bin = opt_llvm/"bin"
     system "./configure", "--prefix=#{prefix}", "--with-llvm=#{opt_llvm}"
     system "make", "stage"
