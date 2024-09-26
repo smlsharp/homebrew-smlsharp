@@ -44,6 +44,7 @@ class Massivethreads < Formula
     system "make"
     system "make", "-C", "tests", "build"
     ENV.delete "MAKEFLAGS"
+    ENV['MYTH_NUM_WORKERS'] = '2'
     system "make", "check"
     system "make", "install"
     Pathname.glob(prefix/"lib/*.la") { |x| x.rmtree }
