@@ -16,6 +16,7 @@ class Smlsharp < Formula
   depends_on "massivethreads"
   depends_on "gmp"
   depends_on "xz" => :build
+  env :std
 
   def install
     opt_llvm = Formula["llvm@18"].opt_prefix.sub(/llvm\z/, "llvm@18")
