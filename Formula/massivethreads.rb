@@ -4,18 +4,15 @@ class Massivethreads < Formula
   url "https://github.com/massivethreads/massivethreads/archive/v1.00.tar.gz"
   sha256 "85b83ff096e2984c725faa4814a9c5e77c143198660ec60118b897afdfd05f98"
   version "1.00"
+  revision 1
   license "BSD-2-Clause"
-
-  bottle do
-    root_url "https://github.com/smlsharp/repos/raw/main/homebrew"
-    sha256 cellar: :any, big_sur: "e66a81676e06fb170ddf6747302507c189207f09ebcf31129a648d3d4ba007e7"
-  end
 
   option "with-dr", "Install DAG recorder"
   option "with-dl", "Install libmyth-dl"
-  depends_on "autoconf" => :build
+  depends_on "autoconf@2.69" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "llvm@15" => :build
   if build.with? "dr" then
     depends_on "freetype"
     depends_on "libpng"
@@ -40,14 +37,16 @@ class Massivethreads < Formula
                                 "--ignore-installed", "matplotlib"
     end
 
-    system "autoreconf", "-fvi"
-    system "./configure", "--prefix=#{prefix}"
+    system Formula["autoconf@2.69"].bin/"autoreconf", "-fvi"
+    system "./configure",
+           "--prefix=#{prefix}",
+           "CC=#{Formula["llvm@15"].bin/"clang"}"
     system "make"
     system "make", "-C", "tests", "build"
     ENV.delete "MAKEFLAGS"
     system "make", "check"
     system "make", "install"
-    Pathname.glob(prefix"lib/*.la") { |x| x.rmtree }
+    Pathname.glob(prefix/"lib/*.la") { |x| x.rmtree }
     (prefix/"lib/libmyth-dl.a").rmtree
 
     unless build.with? "dl" then
