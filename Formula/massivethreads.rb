@@ -6,6 +6,11 @@ class Massivethreads < Formula
   version "1.02"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://smlsharp.github.io/repos/homebrew"
+    sha256 cellar: :any, sonoma: "37a63440a9d611782458b4e7aef8e75fcf1d4b32d07eb07c6812a588b885959a"
+  end
+
   option "with-dr", "Install DAG recorder"
   option "with-dl", "Install libmyth-dl"
   depends_on "autoconf@2.69" => :build
