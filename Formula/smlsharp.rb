@@ -6,6 +6,11 @@ class Smlsharp < Formula
   version "4.1.0"
   license "MIT"
 
+  bottle do
+    root_url "https://smlsharp.github.io/repos/homebrew"
+    sha256 sonoma: "1a4949d74ce36f02a32b2c1d99214941253a29ad988705d3a79a4e96cfbd2b55"
+  end
+
   depends_on "llvm@18"
   depends_on "massivethreads"
   depends_on "gmp"
