@@ -5,6 +5,7 @@ class Smlsharp < Formula
   sha256 "b19543a42654f4bda1d690c6ea6e4d9ee16dc7544b95828f8a7c649e0919a8a1"
   version "4.1.0"
   license "MIT"
+  head "https://github.com/smlsharp/smlsharp.git"
 
   bottle do
     root_url "https://smlsharp.github.io/repos/homebrew"
