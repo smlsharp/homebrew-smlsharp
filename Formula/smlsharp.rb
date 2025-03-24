@@ -1,15 +1,10 @@
 class Smlsharp < Formula
   desc "Standard ML compiler with practical extensions"
   homepage "https://smlsharp.github.io/"
-  url "https://github.com/smlsharp/smlsharp/releases/download/v4.1.0/smlsharp-4.1.0.tar.gz"
-  sha256 "b19543a42654f4bda1d690c6ea6e4d9ee16dc7544b95828f8a7c649e0919a8a1"
-  version "4.1.0"
+  url "https://github.com/smlsharp/smlsharp/releases/download/v4.2.0/smlsharp-4.2.0.tar.gz"
+  sha256 "931fb54762c30ab018c804e669d696522cfabafe0a6f85cadefecee1eff710b7"
+  version "4.2.0"
   license "MIT"
-
-  bottle do
-    root_url "https://smlsharp.github.io/repos/homebrew"
-    sha256 sonoma: "1a4949d74ce36f02a32b2c1d99214941253a29ad988705d3a79a4e96cfbd2b55"
-  end
 
   depends_on "llvm@18"
   depends_on "massivethreads"
