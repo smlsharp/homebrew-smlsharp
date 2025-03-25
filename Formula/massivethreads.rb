@@ -4,16 +4,12 @@ class Massivethreads < Formula
   url "https://github.com/massivethreads/massivethreads/archive/v1.02.tar.gz"
   sha256 "b2f6320f51cbfbc051226a61baf9323c016c28f033283e269007493afab0123c"
   version "1.02"
+  revision 1
   license "BSD-2-Clause"
-
-  bottle do
-    root_url "https://smlsharp.github.io/repos/homebrew"
-    sha256 cellar: :any, sonoma: "37a63440a9d611782458b4e7aef8e75fcf1d4b32d07eb07c6812a588b885959a"
-  end
 
   option "with-dr", "Install DAG recorder"
   option "with-dl", "Install libmyth-dl"
-  depends_on "autoconf@2.69" => :build
+  depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   if build.with? "dr" then
@@ -38,7 +34,7 @@ class Massivethreads < Formula
                                 "--ignore-installed", "matplotlib"
     end
 
-    system Formula["autoconf@2.69"].bin/"autoreconf", "-fvi"
+    system Formula["autoconf"].bin/"autoreconf", "-fvi"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "-C", "tests", "build"
